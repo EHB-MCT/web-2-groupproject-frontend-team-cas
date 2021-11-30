@@ -1,0 +1,30 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend by Team Cas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EHB-MCT/web-2-groupproject-frontend-team-cas.git"
+  },
+  "keywords": [
+    "frontend",
+    "tea",
+    "cas",
+    "rhys",
+    "joachim"
+  ],
+  "author": "Team Cas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EHB-MCT/web-2-groupproject-frontend-team-cas/issues"
+  },
+  "homepage": "https://github.com/EHB-MCT/web-2-groupproject-frontend-team-cas#readme",
+  "dependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
