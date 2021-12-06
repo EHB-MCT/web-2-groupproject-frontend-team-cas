@@ -16,7 +16,7 @@
   \**********************/
 /***/ (() => {
 
-eval("\n\nwindow.onload = function(){\n    console.log('Window loaded!')\n}\n\n//# sourceURL=webpack://web-2-groupproject-frontend-team-cas/./src/index.js?");
+eval("\n\nwindow.onload = function(){\n    console.log('Window loaded!');\n    \n    getData();\n}\n\nasync function getData() {\n    let response = await fetch('https://web2-groupbackend-teamcas.herokuapp.com/challenges');\n    console.log(response);\n    return await response.json();\n}\n\n\n\n\n//# sourceURL=webpack://web-2-groupproject-frontend-team-cas/./src/index.js?");
 
 /***/ })
 
