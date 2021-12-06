@@ -3,29 +3,48 @@
 window.onload = function() {
     console.log('window loaded');
     
-    const uploadForm = document.getElementById('uploadForm');
+    function displayChallenges(){
+        getData('https://web2-groupbackend-teamcas.herokuapp.com/challenges')
+        .then(function (data) {
+            let challenge = document.getElementById('challengeList')
+            let htmlString;
 
-        let id = document.getElementById('id');
-        let name = document.getElementById('name');
-        let points = document.getElementById('points');
-        let course = document.getElementById('course');
-        let session = document.getElementById('sesssion');
-        
-        fetch("https://web2-groupbackend-teamcas.herokuapp.com/saveChallenge", {
-            method: "POST",
-            body:JSON.stringify({
-                id:id,
-                name: name,
-                points: points,
-                course: course,
-                session: session
-            }),
-        }).then(function(response) {
-            return response.json()
-        }).then(function(data){
-            console.log(data)
-        })
-        
-            
+            //displaying all data
+            data.forEach(challenge => {
+                htmlString +=
+                    `<article id="card">
+                        <div>
+                            <h3>${challenge.name}</h3>
+                        </div>
+                        <div id="info">
+                            <p>${challenge.course}</p>
+                            <p>${challenge.points}</p>
+                            <p>${challenge.session}</p>
+                        </div>
+                    </article>`
+            })
+            challenge.innerHTML = htmlString
+        });
+    }
+
+    displayChallenges();
+
+
+
+
+
+
+
+    let uploadForm = document.getElementById('uploadForm');
+
+    uploadForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        console.log('clicked')
+    });
 }
 
+async function getData(url){
+    let response = await fetch(url);
+    return await response.json();
+}
