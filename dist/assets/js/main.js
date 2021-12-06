@@ -1,4 +1,7 @@
-'use strict';
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
 
 window.onload = function() {
     console.log('window loaded');
@@ -29,3 +32,6 @@ window.onload = function() {
             
 }
 
+
+/******/ })()
+;
